@@ -1,4 +1,4 @@
 coderbyte
 =========
 
-my compelted coderbyte exercises
+my completed coderbyte exercises
