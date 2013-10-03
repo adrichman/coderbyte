@@ -63,11 +63,10 @@ function ArrayAdditionI(arr) {
 			}
 		}
 	}
-	// var continueDiffs = function(){
+
 		while (!status && count < sortedArray.length - 1){
 			console.log('sortedArray: ' + sortedArray);
 			mathArray = sortedArray.slice(0);
-//			mathArray.pop();
 			getDiffs(mathArray);
 		}
 		for (var splice = 0; splice < sortedArray.length - 1; splice++){
@@ -83,15 +82,15 @@ function ArrayAdditionI(arr) {
 
 			}
 		}
-	// }
+
 	var theDiffs = getDiffs(mathArray);
-	//console.log(theDiffs);
+
 
     return status;
 }
 
 //ArrayAdditionI([3,5,7,9,43,23,35,10,23,23,46,12]);
 //ArrayAdditionI([3,5,-1,8,12]);
-ArrayAdditionI([14,10,3,2,2]);
+//ArrayAdditionI([14,10,3,2,2]);
 // ArrayAdditionI([5,7,16,1,2]);
 //ArrayAdditionI([10,20,30,40,100]);
