@@ -21,4 +21,4 @@ function VowelCount(str) {
          
 }
 
-VowelCount('hello there');
+VowelCount('coderbyte');
