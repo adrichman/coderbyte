@@ -11,7 +11,7 @@ Input = "(c(oder)) b(yte)"Output = 1
 function BracketMatcher(str){
 	bracket1Arr = [];
 	bracket2Arr = [];
-	for (i=0; i<str.length;i++){
+ß	for (i=0; i<str.length;i++){
 
 		if(str.charAt(i) == "("){
 			bracket1Arr.push(str.charAt(1));
