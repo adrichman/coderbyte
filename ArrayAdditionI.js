@@ -11,77 +11,55 @@ function ArrayAdditionI(arr) {
 	var status = false;
 	var sortedArray = arr.sort(function(a,b){return a-b});
 	var largestIndex = parseInt(sortedArray.length) - 1;
-	console.log('largestIndex: ' + largestIndex);
-
 	var findLargestNum = function(arrSorted){
 			return arrSorted[largestIndex];
 		};
-
 	var largestNum = findLargestNum(sortedArray);
-
-
-	console.log(sortedArray);
-	console.log(largestNum);
-
-
 	var mathArray = sortedArray.slice(0);
 	var count = 0;
-
-
 	var getDiffs = function(arr){
 		if(!status){
 			arr.pop();
 			arr.reverse();
-			console.log(arr);
 			if (count > 1){
 				arr.pop();
 			}
+			var max = largestNum;
 
+			for (i = arr.length - 1 ; i > -1; i-- ){
+				max -= arr[i];
+				if (max == 0){
+					status = true;
 
-				var max = largestNum;
-
-				for (i = arr.length - 1 ; i > -1; i-- ){
-					console.log(max);
-					max -= arr[i];
-					if (max == 0){
-						status = true;
-
-					} else if(max < 0) { 
-						max += arr[i];
-						i--;
-					} 
-				}
+				} else if(max < 0) { 
+					max += arr[i];
+					i--;
+				} 
+			}
 
 			if (!status){
 				count++;
-				console.log('count: ' + count);
-				console.log('max: ' + max);
 				return max;
 			} else {
-				console.log('status: ' + status);
 				return status;	
 			}
 		}
 	}
 
-		while (!status && count < sortedArray.length - 1){
-			console.log('sortedArray: ' + sortedArray);
+	while (!status && count < sortedArray.length - 1){
+		mathArray = sortedArray.slice(0);
+		getDiffs(mathArray);
+	}
+	for (var splice = 0; splice < sortedArray.length - 1; splice++){
+		if (!status){
+			count = 0;
 			mathArray = sortedArray.slice(0);
-			getDiffs(mathArray);
-		}
-		for (var splice = 0; splice < sortedArray.length - 1; splice++){
-			if (!status){
-				count = 0;
-				console.log('sortedArray: ' + sortedArray);
-				mathArray = sortedArray.slice(0);
-				console.log("math array: " + mathArray);
-				console.log('spliceIndex: ' + splice);
-				mathArray.splice(splice,1);
-				console.log('largestNum: ' + largestNum);
-				getDiffs(mathArray);
+			mathArray.splice(splice,1);
 
-			}
+			getDiffs(mathArray);
+
 		}
+	}
 
 	var theDiffs = getDiffs(mathArray);
 
