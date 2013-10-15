@@ -89,6 +89,7 @@ function numberOfPermutations(n){
 		return n * numberOfPermutations(n-1);
 	}
 }
+//PermutationStep(897654321); // Output = 912345678
 //PermutationStep(11121); // Output = 11211
 //PermutationStep(41352); //  Output = 41523
 PermutationStep(990); //  
